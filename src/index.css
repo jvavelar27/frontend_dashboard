@@ -28,9 +28,9 @@
   --accent-solid: #10B981;
   --accent-soft: rgba(16, 185, 129, 0.1);
 
-  /* Secondary Accent - Teal Green */
-  --accent-2: #14B8A6;
-  --accent-2-solid: #14B8A6;
+  /* Secondary Accent - Magenta/Purple */
+  --accent-2: #c501e2;
+  --accent-2-solid: #c501e2;
 
   --danger: #EF4444;
   --warning: #F59E0B;
@@ -72,8 +72,8 @@ html.dark {
   --accent-solid: #34D399;
   --accent-soft: rgba(52, 211, 153, 0.15);
 
-  --accent-2: #2DD4BF;
-  --accent-2-solid: #2DD4BF;
+  --accent-2: #c501e2;
+  --accent-2-solid: #c501e2;
 
   --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.6);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.8), 0 0 20px rgba(52, 211, 153, 0.1);
