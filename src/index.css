@@ -23,10 +23,10 @@
   --muted: #94A3B8;
   --muted-soft: #CBD5E1;
 
-  /* Neural Green Primary Accent */
-  --accent: #10B981;
-  --accent-solid: #10B981;
-  --accent-soft: rgba(16, 185, 129, 0.1);
+  /* Magenta Primary Accent */
+  --accent: #c501e2;
+  --accent-solid: #c501e2;
+  --accent-soft: rgba(197, 1, 226, 0.1);
 
   /* Secondary Accent - Magenta/Purple */
   --accent-2: #c501e2;
@@ -35,15 +35,15 @@
   --danger: #EF4444;
   --warning: #F59E0B;
 
-  /* Soft Elevation Shadows with subtle green tint */
+  /* Soft Elevation Shadows with subtle magenta tint */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
-  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.06), 0 2px 4px -1px rgba(16, 185, 129, 0.02);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(16, 185, 129, 0.03);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(16, 185, 129, 0.04);
-  --shadow-glow: 0 0 20px rgba(16, 185, 129, 0.15);
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.06), 0 2px 4px -1px rgba(197, 1, 226, 0.02);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(197, 1, 226, 0.03);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(197, 1, 226, 0.04);
+  --shadow-glow: 0 0 20px rgba(197, 1, 226, 0.15);
 
   --blur: blur(0px);
-  --ring: 0 0 0 2px rgba(16, 185, 129, 0.2);
+  --ring: 0 0 0 2px rgba(197, 1, 226, 0.2);
 
   --radius: 16px;
 }
@@ -67,17 +67,17 @@ html.dark {
   --muted: #94A3B8;
   --muted-soft: #475569;
 
-  /* Neural Green with glow in dark mode */
-  --accent: #34D399;
-  --accent-solid: #34D399;
-  --accent-soft: rgba(52, 211, 153, 0.15);
+  /* Magenta with glow in dark mode */
+  --accent: #c501e2;
+  --accent-solid: #c501e2;
+  --accent-soft: rgba(197, 1, 226, 0.15);
 
   --accent-2: #c501e2;
   --accent-2-solid: #c501e2;
 
   --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.6);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.8), 0 0 20px rgba(52, 211, 153, 0.1);
-  --shadow-glow: 0 0 30px rgba(52, 211, 153, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.8), 0 0 20px rgba(197, 1, 226, 0.1);
+  --shadow-glow: 0 0 30px rgba(197, 1, 226, 0.3);
 }
 
 body {
