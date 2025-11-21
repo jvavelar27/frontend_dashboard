@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --sidebar-w: 240px;
+  --sidebar-w-collapsed: 64px;
+
+  /* Premium Monochromatic Light Theme */
+  --bg: #FAFBFC;
+  --bg-soft: #F5F7FA;
+
+  --card: #FFFFFF;
+  --card-hover: #FFFFFF;
+  --card-border: #E8ECEF;
+
+  --surface: #FFFFFF;
+
+  --text: #0A0E27;
+  --text-soft: #4A5568;
+  --muted: #94A3B8;
+  --muted-soft: #CBD5E1;
+
+  /* Neural Green Primary Accent */
+  --accent: #10B981;
+  --accent-solid: #10B981;
+  --accent-soft: rgba(16, 185, 129, 0.1);
+
+  /* Secondary Accent - Teal Green */
+  --accent-2: #14B8A6;
+  --accent-2-solid: #14B8A6;
+
+  --danger: #EF4444;
+  --warning: #F59E0B;
+
+  /* Soft Elevation Shadows with subtle green tint */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.06), 0 2px 4px -1px rgba(16, 185, 129, 0.02);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(16, 185, 129, 0.03);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(16, 185, 129, 0.04);
+  --shadow-glow: 0 0 20px rgba(16, 185, 129, 0.15);
+
+  --blur: blur(0px);
+  --ring: 0 0 0 2px rgba(16, 185, 129, 0.2);
+
+  --radius: 16px;
+}
+
+/* Dark Mode - Pure Black Premium */
+html.dark {
+  --bg: #000000;
+  /* Pure black */
+  --bg-soft: #0A0A0A;
+  /* Near black */
+
+  --card: #0F0F0F;
+  --card-hover: #151515;
+  --card-border: #1A1A1A;
+  /* Subtle dark border */
+
+  --surface: #0F0F0F;
+
+  --text: #F8FAFC;
+  --text-soft: #CBD5E1;
+  --muted: #94A3B8;
+  --muted-soft: #475569;
+
+  /* Neural Green with glow in dark mode */
+  --accent: #34D399;
+  --accent-solid: #34D399;
+  --accent-soft: rgba(52, 211, 153, 0.15);
+
+  --accent-2: #2DD4BF;
+  --accent-2-solid: #2DD4BF;
+
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.8), 0 0 20px rgba(52, 211, 153, 0.1);
+  --shadow-glow: 0 0 30px rgba(52, 211, 153, 0.3);
+}
+
+body {
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.01em;
+}
+
+/* Monospace for data/numbers */
+.font-mono {
+  font-family: 'JetBrains Mono', 'Consolas', 'Monaco', monospace;
+}
+
+/* Smooth Transitions */
+* {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+/* Custom Scrollbar - Thinner & Neural Green */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--muted-soft);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-solid);
+}
+
+/* Utility classes */
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Glow effect for accents */
+.glow-accent {
+  box-shadow: var(--shadow-glow);
+}
+
+/* Premium card with light points */
+.card-premium {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-premium::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-solid), transparent);
+  opacity: 0.3;
+}
