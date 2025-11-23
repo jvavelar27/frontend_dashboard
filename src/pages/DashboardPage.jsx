@@ -19,6 +19,7 @@ export default function DashboardPage() {
     });
 
     const loadData = async (days) => {
+        setLoading(true);
         const res = await request(`/dashboard/metrics?rangeDays=${days}`);
         if (res?.success) {
             const d = res.data || res;
@@ -30,32 +31,11 @@ export default function DashboardPage() {
         } else {
             addToast("Falha ao atualizar métricas", "error");
         }
-    };
-
-    const loadInitial = async () => {
-        try {
-            const res = await request('/api/sync');
-            console.log('Dashboard API response:', res);
-            if (res?.success) {
-                const d = res.data || res;
-                setData({
-                    metrics: d.metrics || {},
-                    hourly: d.hourly || Array(24).fill(0),
-                    leads: d.leads || []
-                });
-            }
-        } catch (error) {
-            console.error('Dashboard load error:', error);
-        } finally {
-            setLoading(false);
-        }
+        setLoading(false);
     };
 
     useEffect(() => {
-        loadInitial();
-        // Fallback timeout in case API never responds
-        const timeout = setTimeout(() => setLoading(false), 5000);
-        return () => clearTimeout(timeout);
+        loadData(rangeDays);
     }, []);
 
     const handleRangeChange = (val) => {
@@ -64,6 +44,16 @@ export default function DashboardPage() {
     };
 
     const computePie = () => {
+        // Try to use pre-calculated metrics if available
+        if (data.metrics?.leads !== undefined && data.metrics?.newLeads !== undefined) {
+            const total = data.metrics.leads || 1;
+            const newLeadsCount = data.metrics.newLeads;
+            const pctNew = Math.round(newLeadsCount / total * 100);
+            const pctOld = 100 - pctNew;
+            return { pctNew, pctOld };
+        }
+
+        // Fallback to legacy array calculation (will likely be empty now)
         const todayStart = new Date(); todayStart.setHours(0, 0, 0, 0);
         const total = data.leads.length || 1;
         const newLeads = data.leads.filter(l => new Date(l.primeiroContato) >= todayStart).length;
